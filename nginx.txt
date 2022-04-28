@@ -1,0 +1,16 @@
+# сервер linux на виртуальной машине
+server {
+    listen 80;
+    server_name myserv;
+
+    location /signin {
+ # сюда положил html
+        root /var/www/html;
+        index index.html;
+    }
+
+    location / {
+ # это адресс моей windows машины с idea где работает программа
+        proxy_pass http://192.168.44.1:8080;
+    }
+}
