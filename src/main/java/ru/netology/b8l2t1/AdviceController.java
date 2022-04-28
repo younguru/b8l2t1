@@ -12,6 +12,7 @@ public class AdviceController {
     public String handleInvalidCredentials(RuntimeException ex) {
         return ex.getLocalizedMessage();
     }
+
     @ExceptionHandler(UnauthorizedUser.class)
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public String handleUnauthorizedUser(RuntimeException ex) {
